@@ -5,12 +5,15 @@ Your module documentation here
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    This class has a method to sum a list of numbers
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Sum a list of numbers
+        Args:
+            num_list: list of numbers
+        Returns:
+            sum of the list of numbers
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        return sum(num_list)
