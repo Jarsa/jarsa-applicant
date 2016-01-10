@@ -57,4 +57,11 @@ INSERT INTO employee_hobby_relation (employee_id, hobby_id) VALUES
 	(3, 3),
 	(4, 1),
 	(4, 3);
+
+ALTER TABLE employee ADD boss_id INT REFERENCES employee(id);
+
+UPDATE employee SET boss_id = 2 WHERE id = 1;
+UPDATE employee SET boss_id = 3 WHERE id = 2;
+UPDATE employee SET boss_id = 1 WHERE id = 3;
+UPDATE employee SET boss_id = 1 WHERE id = 4;
 -- ...
