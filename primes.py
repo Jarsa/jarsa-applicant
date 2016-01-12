@@ -13,13 +13,9 @@ class PrimeClass(object):
         # your primes code here
         if num_int == 1:
             return False
-        if num_int == 2:
+        if num_int == 2 or num_int == 3:
             return True
-        if num_int == 3:
-            return True
-        if num_int % 2 == 0:
-            return False
-        if num_int % 3 == 0:
+        if num_int % 2 == 0 or num_int % 3 == 0:
             return False
 
         i_int = 5
