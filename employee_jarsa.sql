@@ -20,6 +20,7 @@ CREATE TABLE employee_hobby (
 CREATE TABLE employee(
   id int primary key,
   id_dep int references employee_department(id),
+  id_boss int,
   first_name varchar(40),
   last_name varchar(40)
 );
@@ -45,12 +46,12 @@ INSERT INTO employee_hobby values
 (2, 'Basketball', '10 weyes detras de un balon'),
 (3, 'Golf', 'Un wey con lana detras de una pelota');
 
--- Crear 4 empleados
+-- Crear 4 empleados, con departamentos y jefes
 INSERT INTO employee values
-(1, 1, 'hola', 'que hace'),
-(2, 2, 'ola', 'ke ase'),
-(3, 3, 'manuna', 'soy asesina'),
-(4, 4, 'pelon', 'enojon');
+(1, 1, 1, 'hola', 'que hace'),
+(2, 2, 2, 'ola', 'ke ase'),
+(3, 3, 3, 'manuna', 'soy asesina'),
+(4, 4, 4, 'pelon', 'enojon');
 
 -- Assignar dos hobbies a empleados
 INSERT INTO employee_hobby_assign values
