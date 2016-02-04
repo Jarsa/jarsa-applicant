@@ -1,16 +1,10 @@
-"""
-Your module documentation here
-"""
-
+from math import sqrt; from itertools import count, islice
 
 class PrimeClass(object):
-    """
-    Your class documentation here
-    """
+    @staticmethod
+    def is_prime(num_int):
+        return num_int > 1 and all(num_int%i for i in islice(count(2), int(sqrt(num_int)-1)))
 
-    def is_prime(self, num_int):
-        """
-        Your method documentation here
-        """
-        # your primes code here
-        return "not implement yet"  # Remove this dummy line
+if __name__ == '__main__':
+    num_int = int(input("Elige un numero entero:"))
+    print((PrimeClass.is_prime(num_int)))
