@@ -4,7 +4,7 @@
 CREATE TABLE employee(
     employeeID int PRIMARY KEY NOT NULL,
     first_name varchar(30) NOT NULL,
-    last_name varchar(30) NOT NULL, 
+    last_name varchar(30) NOT NULL 
     -- departmentID int,
     -- FOREIGN KEY (departmentID) REFERENCES employee_department(departmentID),
     -- bossID varchar(40),
@@ -30,6 +30,5 @@ CREATE TABLE employee_hobby(
   employeeID int,
   FOREIGN KEY (employeeID) REFERENCES employee(employeeID),
   hobbyID int,
-  FOREIGN KEY (hobbyID) REFERENCES employee_hobby(hobbyID),
-  PRIMARY KEY (employeeID, hobbyID)
+  FOREIGN KEY (hobbyID) REFERENCES employee_hobby(hobbyID)
 );
