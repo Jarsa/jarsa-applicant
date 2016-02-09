@@ -80,4 +80,21 @@ INSERT INTO employee_employee_hobby VALUES(103,2);
 
 INSERT INTO employee_employee_hobby VALUES(103,3);
 
--- ...
+---SQL3: Make the necessary changes in the database to assign employees a boss.
+
+ALTER TABLE employee
+ADD FOREIGN KEY(boss) REFERENCES employee(id);
+
+UPDATE employee
+SET boss ='100'
+WHERE id='101';
+
+UPDATE employee
+SET boss ='100'
+WHERE id='102'
+
+UPDATE employee
+SET boss ='100'
+WHERE id='103'
+
+-- ...:
