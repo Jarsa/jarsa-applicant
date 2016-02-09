@@ -1,15 +1,15 @@
 '''
-The input must be a list of numbers,
-then the method sum returns the sum of the numbers in the list
+Calculator application, input must be a list of numbers
 '''
+
+
 class CalculatorClass(object):
     '''
-    Sum method will return the sum of the number list as an integer
+    the class only contains a static method called sum
     '''
     @staticmethod
-    def sum(num_list):
-        return reduce(lambda n, m: n+m, num_list)
-
-if __name__ == '__main__':
-    num_list = input("Escribe una lista de numberos: ")
-    print(CalculatorClass().sum(num_list))
+    def sum(numbers):
+        '''
+        Sum method will return the sum of the number list as an integer
+        '''
+        return reduce(lambda n, m: n+m, numbers)
