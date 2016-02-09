@@ -16,16 +16,8 @@ class PrimeClass(object):
     '''
     @staticmethod
     def is_prime(number):
-        if number > 1:
-            for i in islice(count(2), int(sqrt(number))):
-                if(number % i) == 1 or number == 2:
-                    return True
-                elif (number % i) == 0:
-                    return False
-        else:
-            return False
+        return number >= 2 and all(number%i for i in islice(count(2), int(sqrt(number)-1)))
 
 if __name__ == '__main__':
     number = int(input("Escribe un numero entero: "))
     print PrimeClass.is_prime(number)
-
