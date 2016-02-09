@@ -18,29 +18,29 @@ CREATE TABLE employee_department (
 
 
 ALTER TABLE employee
-ADD FOREIGN KEY(department_id) REFERENCES employee_department(id)
+ADD FOREIGN KEY(department_id) REFERENCES employee_department(id);
 
 
 
-INSERT INTO employee_department VALUES('100', 'The Technical Office', ' perform administrative tasks that help keep an office running smoothly');
+INSERT INTO employee_department VALUES('100', 'The Technical Office', 'perform administrative tasks that help keep an office running smoothly');
 
-INSERT INTO employee_department VALUES ('101', 'IT DEPT', 'This is the department for Information Technology');
+INSERT INTO employee_department VALUES('101', 'IT DEPT', 'This is the department for Information Technology');
 
 INSERT INTO employee_department VALUES('102', 'Finance & Accounting Dept', 'The functions of the accounting and finance department');
 
 INSERT INTO employee_department VALUES('200', 'H.R. Dept', 'Human Resources Department');
 
-INSERT INTO employee_department VALUES('201', 'Contracts Dept', '​The Department of Contracts falls within the portfolio');
+INSERT INTO employee_department VALUES('201', 'Contracts Dept', 'The Department of Contracts falls within the portfolio');
 
-INSERT INTO employee_department VALUES('202', 'Purchasing Dept', 'The organization attempting to acquire goods or services'
+INSERT INTO employee_department VALUES('202', 'Purchasing Dept', 'The organization attempting to acquire goods or services');
 
-INSERT INTO employee VALUES('100', 'Juan', 'Perez', '102');
+INSERT INTO employee VALUES('1000', 'Juan', 'Perez', '102');
 
-INSERT INTO employee VALUES('101', 'Roberto', 'Gonzalez', '101');
+INSERT INTO employee VALUES('1001', 'Roberto', 'Gonzalez', '101');
 
-INSERT INTO employee VALUES('102', 'Julio', 'Cesar', '101');
+INSERT INTO employee VALUES('1002', 'Julio', 'Cesar', '101');
 
-INSERT INTO employee VALUES('103', 'Andres', 'Hernandez', '202')
+INSERT INTO employee VALUES('1003', 'Andres', 'Hernandez', '202');
 
 
 CREATE TABLE employee_hobby (
@@ -66,35 +66,38 @@ INSERT INTO employee_hobby VALUES('2', 'Video Games', 'The employee frecuently p
 
 INSERT INTO employee_hobby VALUES ('1', 'Exercise', 'The employee likes running or goes to the gym on his/her free time?');
 
-INSERT INTO employee_employee_hobby VALUES(101,3);
+INSERT INTO employee_employee_hobby VALUES(1001,3);
 
-INSERT INTO employee_employee_hobby VALUES(101,2);
+INSERT INTO employee_employee_hobby VALUES(1001,2);
 
-INSERT INTO employee_employee_hobby VALUES(102,1);
+INSERT INTO employee_employee_hobby VALUES(1002,1);
 
-INSERT INTO employee_employee_hobby VALUES(102,3);
+INSERT INTO employee_employee_hobby VALUES(1002,3);
 
-INSERT INTO employee_employee_hobby VALUES(103,1);
+INSERT INTO employee_employee_hobby VALUES(1003,1);
 
-INSERT INTO employee_employee_hobby VALUES(103,2);
+INSERT INTO employee_employee_hobby VALUES(1003,2);
 
-INSERT INTO employee_employee_hobby VALUES(103,3);
+INSERT INTO employee_employee_hobby VALUES(1003,3);
 
 ---SQL3: Make the necessary changes in the database to assign employees a boss.
+
+ALTER TABLE employee
+ADD COLUMN boss int;
 
 ALTER TABLE employee
 ADD FOREIGN KEY(boss) REFERENCES employee(id);
 
 UPDATE employee
-SET boss ='100'
+SET boss='100'
 WHERE id='101';
 
 UPDATE employee
-SET boss ='100'
-WHERE id='102'
+SET boss='100'
+WHERE id='102';
 
 UPDATE employee
-SET boss ='100'
-WHERE id='103'
+SET boss='100'
+WHERE id='103';
 
 -- ...:
