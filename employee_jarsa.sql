@@ -56,3 +56,26 @@ INSERT INTO employee_employeehobby VALUES ('102','30');
 INSERT INTO employee_employeehobby VALUES ('102','20');
 INSERT INTO employee_employeehobby VALUES ('102','10');
 
+ALTER TABLE employee
+ADD COLUMN bossId int;
+
+ALTER TABLE employee
+ADD FOREIGN KEY (bossId) REFERENCES employee(employee_id);
+
+UPDATE employee
+SET bossId='100'
+WHERE employee_id='101';
+
+UPDATE employee
+SET bossId='100'
+WHERE employee_id='102';
+
+UPDATE employee
+SET bossId='100'
+WHERE employee_id='103';
+
+
+
+
+
+
