@@ -1,10 +1,7 @@
 """
 Develop a calculator that receives a list of
-numbers as an input and adds those numbers to 
-create an output.
+numbers as an input and adds those numbers to create an output.
 """
-
-
 class CalculatorClass(object):
     """
         Select a type of method to be implemented.
