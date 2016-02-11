@@ -1,16 +1,15 @@
-"""
-Your module documentation here
-"""
+'''
+Calculator application, input must be a list of numbers
+'''
 
 
 class CalculatorClass(object):
-    """
-    Your class documentation here
-    """
-
-    def sum(self, num_list):
-        """
-        Your method documentation here
-        """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+    '''
+    the class only contains a static method called sum
+    '''
+    @staticmethod
+    def sum(numbers):
+        '''
+        Sum method will return the sum of the number list as an integer
+        '''
+        return reduce(lambda n, m: n+m, numbers)
