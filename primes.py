@@ -29,7 +29,3 @@ class PrimeClass(object):
             return False
 
 
-# if __name__ == '__main__':
-# num_int = int(input('Write index number:'))
-# print(PrimeClass.is_prime(num_int))
-

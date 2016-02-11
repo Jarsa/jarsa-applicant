@@ -15,9 +15,5 @@ class CalculatorClass(object):
             """
         return reduce(lambda x, y: x+y, numbers)
 
-# if __name__ == '__main__':
-# numbers = int(input("Write a list of numbers:"))
-# print CalculatorClass().sum(numbers)
-
 
 
