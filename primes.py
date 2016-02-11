@@ -1,6 +1,7 @@
 """
 Prime number input
-An integer is introduced as an input and the program calculates if it is a prime number or not.
+An integer is introduced as an input and the 
+program calculates if it is a prime number or not.
 """
 from math import sqrt
 
