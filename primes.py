@@ -4,32 +4,30 @@ An integer is introduced as an input and the program calculates if it is a prime
 """
 from math import sqrt
 
+
 class PrimeClass(object):
     """
-    Define the type of method and the method itself that will be implemented.
-    """
+        Define the type of method and the method
+        itself that will be implemented.
+        """
     @staticmethod
     def is_prime(num_int):
         """
-       Checks if it is a prime or not.
-        """
+            Checks if it is index prime or not.
+            """
         if num_int > 1:
             if num_int == 2:
                 return True
             if num_int % 2 == 0:
                 return False
-            for i in range(2,int(sqrt(num_int)-1)):
-                if (num_int % i) == 0:
+            for index in range(2, int(sqrt(num_int)-1)):
+                if (num_int % index) == 0:
                     return False
             return True
         else:
             return False
 
 
-
-
-
-if __name__ == '__main__':
-  num_int = int(input('Write a number:')) 
-  print(PrimeClass.is_prime(num_int))
-
+#if __name__ == '__main__':
+#    num_int = int(input('Write index number:'))
+#    print(PrimeClass.is_prime(num_int))
