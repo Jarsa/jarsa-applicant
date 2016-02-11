@@ -11,7 +11,7 @@ name varchar(40) NOT NULL,
 description varchar(50) NOT NULL 
 );
 
-ALTER TABLE employee
+ALTER TABLE employee_employee
 ADD FOREIGN KEY (department_id) REFERENCES employee_department(department_id);
 
 INSERT INTO employee_department VALUES ('200','Maquiladora','Confeccion de ropa');
