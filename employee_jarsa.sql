@@ -1,4 +1,4 @@
-CREATE TABLE employee_employee (
+CREATE TABLE employee(
 employee_id int PRIMARY KEY NOT NULL,
 first_name varchar(40) NOT NULL, 
 last_name varchar(50) NOT NULL,
@@ -11,7 +11,7 @@ name varchar(40) NOT NULL,
 description varchar(50) NOT NULL 
 );
 
-ALTER TABLE employee_employee
+ALTER TABLE employee
 ADD FOREIGN KEY (department_id) REFERENCES employee_department(department_id);
 
 INSERT INTO employee_department VALUES ('200','Maquiladora','Confeccion de ropa');
@@ -20,10 +20,10 @@ INSERT INTO employee_department VALUES ('202','IT Business','Administracion de t
 INSERT INTO employee_department VALUES ('203','Marketing','Publicidad');
 INSERT INTO employee_department VALUES ('204','Contabilidad','Negocios');
 INSERT INTO employee_department VALUES ('205','Diseno grafico','Publicidad y muchas cosas mas');
-INSERT INTO employee_employee VALUES ('100','Alejandra','Munoz','200');
-INSERT INTO employee_employee VALUES ('101','Daniel','Rocha','201');
-INSERT INTO employee_employee VALUES ('102','Benjamin','Arredondo','202');
-INSERT INTO employee_employee VALUES ('103','Liliana','Barraza','203');
+INSERT INTO employee VALUES ('100','Alejandra','Munoz','200');
+INSERT INTO employee VALUES ('101','Daniel','Rocha','201');
+INSERT INTO employee VALUES ('102','Benjamin','Arredondo','202');
+INSERT INTO employee VALUES ('103','Liliana','Barraza','203');
 
 CREATE TABLE employee_hobby(
 id int PRIMARY KEY NOT NULL, 
@@ -37,7 +37,7 @@ id int
 );
 
 ALTER TABLE employee_employeehobby
-ADD FOREIGN KEY (employee_id) REFERENCES employee_employee(employee_id);
+ADD FOREIGN KEY (employee_id) REFERENCES employee(employee_id);
 
 ALTER TABLE employee_employeehobby
 ADD FOREIGN KEY (id) REFERENCES employee_hobby(id);
@@ -56,21 +56,21 @@ INSERT INTO employee_employeehobby VALUES ('102','30');
 INSERT INTO employee_employeehobby VALUES ('102','20');
 INSERT INTO employee_employeehobby VALUES ('102','10');
 
-ALTER TABLE employee_employee
+ALTER TABLE employee
 ADD COLUMN bossId int;
 
-ALTER TABLE employee_employee
-ADD FOREIGN KEY (bossId) REFERENCES employee_employee(employee_id);
+ALTER TABLE employee
+ADD FOREIGN KEY (bossId) REFERENCES employee(employee_id);
 
-UPDATE employee_employee
+UPDATE employee
 SET bossId='100'
 WHERE employee_id='101';
 
-UPDATE employee_employee
+UPDATE employee
 SET bossId='100'
 WHERE employee_id='102';
 
-UPDATE employee_employee
+UPDATE employee
 SET bossId='100'
 WHERE employee_id='103';
 
