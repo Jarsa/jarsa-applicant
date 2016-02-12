@@ -4,6 +4,7 @@
     program calculates if it is a prime number or not.
     """
 from math import sqrt
+from itertools import islice,count
 
 
 class PrimeClass(object):
@@ -12,18 +13,18 @@ class PrimeClass(object):
         itself that will be implemented.
         """
     @staticmethod
-    def is_prime(num_int):
-        """
-            Checks if it is index prime or not.
-            """
+        def is_prime(num_int):
         if num_int > 1:
-            if num_int == 2:
-                return True
-            if num_int % 2 == 0:
-                return False
-            for index in range(2, int(sqrt(num_int)-1)):
-                if (num_int % index) == 0:
+            for i in islice(count(2), int(sqrt(num_int))):
+                if num_int == 2:
+                    return True
+                elif (num_int % i) == 0:
                     return False
             return True
         else:
             return False
+
+
+if __name__ =='__main__':
+    alejandra = int(input('escribe algo:'))
+    print (PrimeClass.is_prime(alejandra))
