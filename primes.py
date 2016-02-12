@@ -1,8 +1,8 @@
 """
-Prime number input
-An integer is introduced as an input and the
-program calculates if it is a prime number or not.
-"""
+    Prime number input
+    An integer is introduced as an input and the
+    program calculates if it is a prime number or not.
+    """
 from math import sqrt
 
 
@@ -27,5 +27,3 @@ class PrimeClass(object):
             return True
         else:
             return False
-
-
