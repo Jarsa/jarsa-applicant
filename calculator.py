@@ -1,16 +1,16 @@
 """
-Your module documentation here
-"""
+    Develop a calculator that receives a list of
+    numbers as an input and adds those numbers to create an output.
+    """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
-    """
-
-    def sum(self, num_list):
+        Select a type of method to be implemented.
         """
-        Your method documentation here
+    @staticmethod
+    def sum(numbers):
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+            Adding numbers by reducing the list.
+            """
+        return reduce(lambda x, y: x+y, numbers)
