@@ -6,13 +6,13 @@ department_id int
 );
 
 CREATE TABLE employee_department (
-department_id int PRIMARY KEY NOT NULL, 
+id int PRIMARY KEY NOT NULL, 
 name varchar(40) NOT NULL, 
 description varchar(50) NOT NULL 
 );
 
 ALTER TABLE employee
-ADD FOREIGN KEY (department_id) REFERENCES employee_department(department_id);
+ADD FOREIGN KEY (department_id) REFERENCES employee_department(id);
 
 INSERT INTO employee_department VALUES ('200','Maquiladora','Confeccion de ropa');
 INSERT INTO employee_department VALUES ('201','Business','Negocios internacionales');
@@ -32,12 +32,12 @@ description text
 );
 
 CREATE TABLE employee_employeehobby(
-employee_id int,
+employeeid int,
 id int
 );
 
 ALTER TABLE employee_employeehobby
-ADD FOREIGN KEY (employee_id) REFERENCES employee(id);
+ADD FOREIGN KEY (employeeid) REFERENCES employee(id);
 
 ALTER TABLE employee_employeehobby
 ADD FOREIGN KEY (id) REFERENCES employee_hobby(id);
