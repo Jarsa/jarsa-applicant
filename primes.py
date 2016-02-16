@@ -18,10 +18,10 @@ class PrimeClass(object):
            Try to find if the number is prime or not.
         '''
         if num_int > 1:
-            for _ in islice(count(2), int(sqrt(num_int))):
+            for index in islice(count(2), int(sqrt(num_int))):
                 if num_int == 2:
                     return True
-                elif (num_int % _) == 0:
+                elif (num_int % index) == 0:
                     return False
             return True
         else:
