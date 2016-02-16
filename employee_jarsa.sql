@@ -1,5 +1,5 @@
 CREATE TABLE employee(
-employee_id int PRIMARY KEY NOT NULL,
+id int PRIMARY KEY NOT NULL,
 first_name varchar(40) NOT NULL, 
 last_name varchar(50) NOT NULL,
 department_id int
@@ -37,7 +37,7 @@ id int
 );
 
 ALTER TABLE employee_employeehobby
-ADD FOREIGN KEY (employee_id) REFERENCES employee(employee_id);
+ADD FOREIGN KEY (employee_id) REFERENCES employee(id);
 
 ALTER TABLE employee_employeehobby
 ADD FOREIGN KEY (id) REFERENCES employee_hobby(id);
@@ -60,19 +60,19 @@ ALTER TABLE employee
 ADD COLUMN bossId int;
 
 ALTER TABLE employee
-ADD FOREIGN KEY (bossId) REFERENCES employee(employee_id);
+ADD FOREIGN KEY (bossId) REFERENCES employee(id);
 
 UPDATE employee
 SET bossId='100'
-WHERE employee_id='101';
+WHERE id='101';
 
 UPDATE employee
 SET bossId='100'
-WHERE employee_id='102';
+WHERE id='102';
 
 UPDATE employee
 SET bossId='100'
-WHERE employee_id='103';
+WHERE id='103';
 
 
 
