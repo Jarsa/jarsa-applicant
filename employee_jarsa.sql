@@ -3,6 +3,13 @@
 --       You can create database locally to test it.
 --       Consider add ';' at end sentence.
 
+CREATE TABLE employee_department (
+    id serial PRIMARY KEY,
+    name varchar(30),
+    description varchar(200)
+);
+
+
 CREATE TABLE employee (
     id serial PRIMARY KEY,
     first_name varchar(30),
@@ -11,12 +18,6 @@ CREATE TABLE employee (
     boss_id integer,
     FOREIGN KEY (department_id) REFERENCES employee_department(id),
     FOREIGN KEY (boss_id) REFERENCES employee(id)--//Make recursion like res.partner in Odoo
-);
-
-CREATE TABLE employee_department (
-    id serial PRIMARY KEY,
-    name varchar(30),
-    description varchar(200)
 );
 
 CREATE TABLE employee_hobby (
