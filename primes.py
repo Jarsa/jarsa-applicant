@@ -1,16 +1,25 @@
 """
-Your module documentation here
+Applicant
 """
 
 
 class PrimeClass(object):
     """
-    Your class documentation here
+    Detect a prime number
     """
 
     def is_prime(self, num_int):
         """
-        Your method documentation here
+        @self: parameter always received inside a class in python
+        @num_int: a number gives by the user
         """
         # your primes code here
-        return "not implement yet"  # Remove this dummy line
+        if num_int:
+            if num_int < 2:
+                # The number 1 is not prime because it only has a divider.
+                return False
+            for numb in range(2, num_int):
+                if num_int % numb == 0:
+                    return False
+            return True
+        return False

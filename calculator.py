@@ -1,16 +1,21 @@
 """
-Your module documentation here
+Applicant
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Operations with numbers
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        @self: parameter always received inside a class in python
+        @num_list: list of a number that use in the method
         """
         # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        total = 0.00
+        for item in num_list:
+            total += item
+
+        return total
