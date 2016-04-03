@@ -8,7 +8,9 @@ CREATE TABLE employee (
     first_name varchar(30),
     last_name varchar(30),
     department_id integer,
-    FOREIGN KEY (department_id) REFERENCES employee_department(id)
+    boss_id integer,
+    FOREIGN KEY (department_id) REFERENCES employee_department(id),
+    FOREIGN KEY (boss_id) REFERENCES employee(id)--//Make recursion like res.partner in Odoo
 );
 
 CREATE TABLE employee_department (
