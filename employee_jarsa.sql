@@ -44,10 +44,12 @@ CREATE TABLE hobby (
 
 alter table employee_hobby add constraint fk_employee_id foreign key(employee_id) references employee(id) on delete cascade on update cascade;
 alter table employee_hobby add constraint fk_hobby_id foreign key(hobby_id) references hobby(id) on delete cascade on update cascade;
-alter table employee add constraint fk_boss_id foreign key(id) references employee(id) on delete cascade on update cascade;
 
 select * from employee_hobby;
+
 insert into hobby (name,description) values ('Dance','Dance around the house');
 insert into hobby (name,description) values ('Crossfit','Excercise yout body');
 insert into hobby (name,description) values ('Collector','Collector of different things');
 insert into hobby (name,description) values ('Run','Run in the park on the afternoon');
+
+alter table employee add constraint fk_boss_id foreign key(id) references employee(id) on delete cascade on update cascade;
