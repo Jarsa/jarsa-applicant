@@ -28,3 +28,26 @@ insert into employee (first_name, last_name, employee_department_id) values ('He
 insert into employee (first_name, last_name, employee_department_id) values ('Alberto','Campos',1);
 insert into employee (first_name, last_name, employee_department_id) values ('Jose','Almendraris',2);
 insert into employee (first_name, last_name, employee_department_id) values ('Luis','Suarez',4);
+
+CREATE TABLE employee_hobby (
+   id serial not null,
+   employee_id int not null,
+   hobby_id int not null,
+   primary key(id)
+);
+
+CREATE TABLE hobby (
+   id serial not null,
+   name varchar(60),
+   description varchar(200) 
+);
+
+alter table employee_hobby add constraint fk_employee_id foreign key(employee_id) references employee(id) on delete cascade on update cascade;
+alter table employee_hobby add constraint fk_hobby_id foreign key(hobby_id) references hobby(id) on delete cascade on update cascade;
+alter table employee add constraint fk_boss_id foreign key(id) references employee(id) on delete cascade on update cascade;
+
+select * from employee_hobby;
+insert into hobby (name,description) values ('Dance','Dance around the house');
+insert into hobby (name,description) values ('Crossfit','Excercise yout body');
+insert into hobby (name,description) values ('Collector','Collector of different things');
+insert into hobby (name,description) values ('Run','Run in the park on the afternoon');
