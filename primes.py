@@ -12,5 +12,13 @@ class PrimeClass(object):
         """
         Your method documentation here
         """
+        if num_int/num_int==1:
+        	print "it's prime"
+        else:
+        	if num_int/1==num_int:
+        		print "it's prime"
+        	else:
+        		print "it's not prime"
+
         # your primes code here
-        return "not implement yet"  # Remove this dummy line
+     
