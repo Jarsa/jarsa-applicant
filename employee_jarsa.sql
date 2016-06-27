@@ -59,3 +59,11 @@ INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (6, 3, 3
 INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (7, 4, 2);
 INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (8, 4, 3);
 -- ...
+
+ALTER TABLE employee ADD COLUMN boss_id int default NULL;
+ALTER TABLE employee ADD CONSTRAINT fk_employees_employees_boss FOREIGN KEY (boss_id) REFERENCES employee(id);
+
+UPDATE employee SET boss_id = 1 WHERE id = 1;
+UPDATE employee SET boss_id = 1 WHERE id = 2;
+UPDATE employee SET boss_id = 1 WHERE id = 3;
+UPDATE employee SET boss_id = 1 WHERE id = 4;
