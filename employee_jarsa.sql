@@ -29,7 +29,33 @@ INSERT INTO employee_department (id,name,description,employee_id) values (1, 'Be
 INSERT INTO employee_department (id,name,description,employee_id) values (1, 'Abarrotes', 'Departamento con abarrotes generales para el hogar',4);
 INSERT INTO employee_department (id,name,description) values (1, 'Caballeros', 'Departamento con ropa y accesorios para caballeros');
 INSERT INTO employee_department (id,name,description) values (1, 'Damas', 'Departamento con ropa y accesorios para damas');
+
 CREATE TABLE employee_hobby (
+    id int NOT NULL,
+    name char(35) NOT NULL,
+    description char (100) NOT NULL,
+    CONSTRAINT pk_employee_hobby PRIMARY KEY (id)
 );
 
+CREATE TABLE employees_hobbies (
+    id int NOT NULL,
+    employee_id int NOT NULL,
+    employee_hobby_id int NOT NULL
+);
+ALTER TABLE employees_hobbies ADD CONSTRAINT pk_employees_employees_hobbies FOREIGN KEY (employee_id) REFERENCES employee(id);
+
+ALTER TABLE employees_hobbies ADD CONSTRAINT pk_employee_hobby_employees_hobbies FOREIGN KEY (employee_hobby_id) REFERENCES employee_hobby(id);
+
+INSERT INTO employee_hobby (id, name,description) values (1, 'Leer', 'Leer todo tipo de literatura tanto pasada como contemporánea');
+INSERT INTO employee_hobby (id, name,description) values (2, 'Escuchar Música', 'Escuchar música del agrado del empleado');
+INSERT INTO employee_hobby (id, name,description) values (3, 'Jugar Ajedrez', 'Jugar ajedrez con personas cercanas al empleado');
+
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (1, 1, 1);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (2, 1, 2);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (3, 2, 1);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (4, 2, 3);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (5, 3, 2);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (6, 3, 3);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (7, 4, 2);
+INSERT INTO employees_hobbies (id,employee_id,employee_hobby_id) values (8, 4, 3);
 -- ...
