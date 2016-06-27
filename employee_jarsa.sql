@@ -19,9 +19,9 @@ CREATE TABLE employee_department (
 ALTER TABLE employee_department ADD CONSTRAINT pk_employee_department FOREIGN KEY (employee_id) REFERENCES employee(id);
 
 INSERT INTO employee (id, first_name,last_name) values (1, 'Oscar Ulises', 'Garza Cordova');
-INSERT INTO employee (id, first_name,last_name) values (1, 'Luis ', 'Perez Lopez');
-INSERT INTO employee (id, first_name,last_name) values (1, 'Mariana', 'Garcia Sarabia');
-INSERT INTO employee (id, first_name,last_name) values (1, 'Gisela', 'Zapata Belmontes');
+INSERT INTO employee (id, first_name,last_name) values (2, 'Luis ', 'Perez Lopez');
+INSERT INTO employee (id, first_name,last_name) values (3, 'Mariana', 'Garcia Sarabia');
+INSERT INTO employee (id, first_name,last_name) values (4, 'Gisela', 'Zapata Belmontes');
 
 INSERT INTO employee_department (id,name,description,employee_id) values (1, 'Ventas', 'Departamento que se encarga de gestionar las ventas de la empresa',1);
 INSERT INTO employee_department (id,name,description,employee_id) values (1, 'Compras', 'Departamento que se encarga de gestionar las compras de la empresa',2);
