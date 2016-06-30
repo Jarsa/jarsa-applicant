@@ -54,4 +54,11 @@ INSERT INTO employees_hobbies values(6, 3, 3);
 INSERT INTO employees_hobbies values(7, 4, 1);
 INSERT INTO employees_hobbies values(8, 4, 2);
 
+ALTER TABLE employee ADD COLUMN id_boss INT DEFAULT NULL;
+ALTER TABLE employee ADD CONSTRAINT fk_id_boss FOREIGN KEY(id_boss) REFERENCES employee(id);
+
+UPDATE employee SET id_boss = 1 WHERE id = 1;
+UPDATE employee SET id_boss = 1 WHERE id = 2;
+UPDATE employee SET id_boss = 1 WHERE id = 3;
+UPDATE employee SET id_boss = 1 WHERE id = 4;
 -- ...
