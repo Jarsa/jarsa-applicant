@@ -33,7 +33,25 @@ INSERT INTO employee values (2, 'Luis ', 'Perez Lopez',3);
 INSERT INTO employee values (3, 'Mariana', 'Garcia Sarabia',4);
 INSERT INTO employee values (4, 'Gisela', 'Zapata Belmontes',6);
 
-CREATE TABLE employee_hobby (
-   
+CREATE TABLE employees_hobbies (
+    employee_id int NOT NULL,
+    employee_hobby_id int NOT NULL
 );
+
+ALTER TABLE employees_hobbies ADD CONSTRAINT fk_employees_employees_hobbies FOREIGN KEY (employee_id) REFERENCES employee(id);
+
+ALTER TABLE employees_hobbies ADD CONSTRAINT fk_employee_hobby_employees_hobbies FOREIGN KEY (employee_hobby_id) REFERENCES employee_hobby(id);
+
+INSERT INTO employee_hobby (id, name,description) values (1, 'Leer', 'Leer todo tipo de literatura tanto pasada como contemporánea');
+INSERT INTO employee_hobby (id, name,description) values (2, 'Escuchar Música', 'Escuchar música del agrado del empleado');
+INSERT INTO employee_hobby (id, name,description) values (3, 'Jugar Ajedrez', 'Jugar ajedrez con personas cercanas al empleado');
+
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (1, 1);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (1, 2);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (2, 1);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (2, 3);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (3, 2);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (3, 3);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (4, 2);
+INSERT INTO employees_hobbies (employee_id,employee_hobby_id) values (4, 3);
 
