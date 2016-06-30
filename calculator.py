@@ -1,16 +1,12 @@
-"""
-Your module documentation here
-"""
+""" This module has a class calledCalculatorClass with a method
+called sum that receives a list of numbers """
 
 
 class CalculatorClass(object):
-    """
-    Your class documentation here
-    """
-
+    """ This class has a method called sum that receives a list of numbers"""
     def sum(self, num_list):
-        """
-        Your method documentation here
-        """
+        """This method receives in its input a list of numbers and with amethod
+        called sum we obtain the sum of the whole pack of numbers"""
         # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        ro = sum(num_list)
+        return ro
