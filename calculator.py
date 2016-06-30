@@ -21,5 +21,5 @@ class CalculatorClass(object):
         Finally we return the result.
         """
         # your sum code here
-        sum = sum(num_list)
-        return sum
+        result = sum(num_list)
+        return result

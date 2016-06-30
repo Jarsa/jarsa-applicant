@@ -33,6 +33,13 @@ INSERT INTO employee values (2, 'Luis ', 'Perez Lopez',3);
 INSERT INTO employee values (3, 'Mariana', 'Garcia Sarabia',4);
 INSERT INTO employee values (4, 'Gisela', 'Zapata Belmontes',6);
 
+CREATE TABLE employee_hobby (
+    id int NOT NULL,
+    name char(35) NOT NULL,
+    description char (100) NOT NULL,
+    CONSTRAINT pk_employee_hobby PRIMARY KEY (id)
+);
+
 CREATE TABLE employees_hobbies (
     employee_id int NOT NULL,
     employee_hobby_id int NOT NULL
