@@ -34,7 +34,6 @@ CREATE TABLE employee_hobby (
  description varchar(100) NOT NULL
 );
 CREATE TABLE employees_hobbies(
- id int NOT NULL, 
  id_employee int NOT NULL, 
  id_employee_hobby INT
 );
@@ -45,20 +44,14 @@ INSERT INTO employee_hobby values(1, 'Tennis','Jugar Tennis');
 INSERT INTO employee_hobby values(2, 'Soccer','Jugar Soccer');
 INSERT INTO employee_hobby values(3, 'Football','Jugar Football');
 
-INSERT INTO employees_hobbies values(1, 1, 1);
-INSERT INTO employees_hobbies values(2, 1, 2);
-INSERT INTO employees_hobbies values(3, 2, 2);
-INSERT INTO employees_hobbies values(4, 2, 3);
-INSERT INTO employees_hobbies values(5, 3, 1);
-INSERT INTO employees_hobbies values(6, 3, 3);
-INSERT INTO employees_hobbies values(7, 4, 1);
-INSERT INTO employees_hobbies values(8, 4, 2);
+INSERT INTO employees_hobbies values(1, 1);
+INSERT INTO employees_hobbies values(1, 2);
+INSERT INTO employees_hobbies values(2, 2);
+INSERT INTO employees_hobbies values(2, 3);
+INSERT INTO employees_hobbies values(3, 1);
+INSERT INTO employees_hobbies values(3, 3);
+INSERT INTO employees_hobbies values(4, 1);
+INSERT INTO employees_hobbies values(4, 2);
 
-ALTER TABLE employee ADD COLUMN id_boss INT DEFAULT NULL;
-ALTER TABLE employee ADD CONSTRAINT fk_id_boss FOREIGN KEY(id_boss) REFERENCES employee(id);
 
-UPDATE employee SET id_boss = 1 WHERE id = 1;
-UPDATE employee SET id_boss = 1 WHERE id = 2;
-UPDATE employee SET id_boss = 1 WHERE id = 3;
-UPDATE employee SET id_boss = 1 WHERE id = 4;
 -- ...
