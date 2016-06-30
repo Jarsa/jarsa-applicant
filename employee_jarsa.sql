@@ -28,4 +28,30 @@ INSERT INTO employee_department VALUES(4, 'Sistemas', 'Se encarga de gestionar l
 INSERT INTO employee_department VALUES(5, 'Redes', 'Se encarga de las redes de comunicacion');
 INSERT INTO employee_department VALUES(6, 'Atn al Cliente', 'Se encarga de la atencion y trato al cliente');
 
+CREATE TABLE employee_hobby (
+ id int PRIMARY KEY NOT NULL,
+ name varchar(50) NOT NULL, 
+ description varchar(100) NOT NULL
+);
+CREATE TABLE employees_hobbies(
+ id int NOT NULL, 
+ id_employee int NOT NULL, 
+ id_employee_hobby INT
+);
+ALTER TABLE employees_hobbies ADD CONSTRAINT fk_employee_employee_hobbies FOREIGN KEY(id_employee) REFERENCES employee(id);
+ALTER TABLE employees_hobbies ADD CONSTRAINT fk_employeehobby_employeeshobbies FOREIGN KEY(id_employee_hobby) REFERENCES employee_hobby(id);
+
+INSERT INTO employee_hobby values(1, 'Tennis','Jugar Tennis');
+INSERT INTO employee_hobby values(2, 'Soccer','Jugar Soccer');
+INSERT INTO employee_hobby values(3, 'Football','Jugar Football');
+
+INSERT INTO employees_hobbies values(1, 1, 1);
+INSERT INTO employees_hobbies values(2, 1, 2);
+INSERT INTO employees_hobbies values(3, 2, 2);
+INSERT INTO employees_hobbies values(4, 2, 3);
+INSERT INTO employees_hobbies values(5, 3, 1);
+INSERT INTO employees_hobbies values(6, 3, 3);
+INSERT INTO employees_hobbies values(7, 4, 1);
+INSERT INTO employees_hobbies values(8, 4, 2);
+
 -- ...
