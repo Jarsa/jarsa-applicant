@@ -21,14 +21,16 @@ class PrimeClass(object):
         number = int(num_int)
         counter = 0
         not_prime = False
-        for test_number in range(1, number + 1):
-            if (test_number % test_number) == 0:
-                counter = counter + 1
-            if counter > 2:
-                not_prime = True
-                break
-
-        if not not_prime or counter == 2:
-            return True
-        else:
+        if number == 1:
             return False
+        else:
+            for test_number in range(1, number + 1):
+                if (number % test_number) == 0:
+                    counter = counter + 1
+                if counter > 2:
+                    not_prime = True
+                    break
+            if not not_prime or counter == 2:
+                return True
+            else:
+                return False
