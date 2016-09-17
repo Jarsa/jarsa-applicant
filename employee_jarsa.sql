@@ -57,3 +57,10 @@ insert INTO employees_h  VALUES (3,1);
 insert INTO employees_h  VALUES (3,3);
 insert INTO employees_h  VALUES (4,2);
 insert INTO employees_h  VALUES (4,1);
+
+
+ALTER TABLE employee ADD COLUMN idboss INT DEFAULT NULL;
+UPDATE employee SET idboss = 1 WHERE id = 1;
+UPDATE employee SET idboss = 1 WHERE id = 2;
+UPDATE employee SET idboss = 1 WHERE id = 3;
+UPDATE employee SET idboss = 1 WHERE id = 4;
