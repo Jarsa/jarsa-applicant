@@ -4,13 +4,22 @@ Your module documentation here
 
 
 class PrimeClass(object):
-    """
-    Your class documentation here
-    """
+    """This is a class that contains a is_prime method which checks primes"""
 
     def is_prime(self, num_int):
-        """
-        Your method documentation here
-        """
+        """ This is a method called is_prime which checks primes number"""
+
         # your primes code here
-        return "not implement yet"  # Remove this dummy line
+        number = int(num_int)
+        count = 0
+        if number == 1:
+            return False
+        else:
+            not_prime = False
+            for item in range(1, number + 1):
+                if (number % item) == 0:
+                    count = count + 1
+                if count >= 3:
+                    not_prime = True
+                    break
+            return not not_prime or count == 2
