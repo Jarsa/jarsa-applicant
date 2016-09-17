@@ -24,7 +24,7 @@ insert INTO employee_department  VALUES (4, 'DISEÑO','D');
 insert INTO employee_department  VALUES(5, 'VENTAS','VTAS');
 insert INTO employee_department  VALUES (6, 'COMPRAS','COMPRAS');
 
-insert into employee VALUES (4, 'Martha', 'Esparza Arg',1);
+insert into employee VALUES (1, 'Martha', 'Esparza Arg',1);
 insert into employee VALUES (2, 'Abraham', 'Avila Esparza',2);
 insert into employee VALUES (3, 'Abigail', 'Avila Esparza',3);
 insert into employee VALUES (4, 'Ana', 'Esparza Arg',3);

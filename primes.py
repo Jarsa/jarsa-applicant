@@ -4,14 +4,10 @@ Your module documentation here
 
 
 class PrimeClass(object):
-    """
-    This is a class that contains a is_prime method which checks primes numbers
-    """
+    """This is a class that contains a is_prime method which checks primes"""
 
     def is_prime(self, num_int):
-        """
-        This is a method called is_prime which checks primes numbers
-        """
+        """ This is a method called is_prime which checks primes number"""
 
         # your primes code here
         number = int(num_int)
@@ -26,7 +22,4 @@ class PrimeClass(object):
                 if count >= 3:
                     not_prime = True
                     break
-            if not not_prime or count == 2:
-                return True
-            else:
-                return False
+            return not not_prime or count == 2
