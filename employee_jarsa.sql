@@ -16,6 +16,15 @@ CREATE TABLE employee_department (
 );
 
 CREATE TABLE employee_hobby (
+    id INT PRIMARY KEY,
+    name varchar(64),
+    description varchar(64)
+);
+
+CREATE TABLE employee_hobbies (
+    employee_id INT REFERENCES employee(id),
+    hobby_id INT REFERENCES employee_hobby(id),
+    PRIMARY KEY (employee_id, hobby_id)
 );
 
 ALTER TABLE employee ADD department_id INT REFERENCES employee_department(id);
@@ -33,4 +42,19 @@ INSERT INTO employee (id, first_name, last_name, department_id) VALUES
     (2, 'Pedro', 'Perez', 6),
     (3, 'Mike', 'Smith', 2),
     (4, 'John',  'Doe', 1);
+
+INSERT INTO employee_hobby (id, name, description) VALUES
+    (1, 'Development', 'Develop apps.'),
+    (2, 'Read', 'Read technical ebooks.'),
+    (3, 'Play', 'Play with my children.');
+
+INSERT INTO employee_hobbies (employee_id, hobby_id) VALUES
+    (1, 1),
+    (1, 2),
+    (2, 1),
+    (2, 3),
+    (3, 2),
+    (3, 3),
+    (4, 1),
+    (4, 2);
 -- ...
