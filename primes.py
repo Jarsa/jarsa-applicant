@@ -1,11 +1,11 @@
 """
-It contains a class with useful method to determine whether a number is prime or not.
+It contains a class with useful method to determine whether a number is prime.
 """
 
 
 class PrimeClass(object):
     """
-    contains a class with useful method to determine whether a number is prime or not.
+    contains a class with useful method to determine whether a number is prime.
     """
 
     def is_prime(self, num_int):
