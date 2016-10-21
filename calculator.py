@@ -1,16 +1,19 @@
 """
-Your module documentation here
+Contains a class with useful method to calculate the sum of a list of numbers.
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Contains useful method to calculate the sum of a list of numbers.
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        calculates the sum of a list of numbers.
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        if not isinstance(num_list, list):
+            print "The method should receive a list of numbers"
+            return False
+
+        return sum(num_list)
