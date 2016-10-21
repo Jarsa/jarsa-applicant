@@ -15,5 +15,5 @@ class CalculatorClass(object):
         if not isinstance(num_list, list):
             print "The method should receive a list of numbers"
             return False
-
+	# use function sum() of python
         return sum(num_list)
