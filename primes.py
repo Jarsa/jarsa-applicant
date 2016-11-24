@@ -1,13 +1,15 @@
 """
 Your module documentation here
+
 """
-import math;
+import math
 class PrimeClass(object):
+    
+
     """
     Your class documentation here
+
     """
-
-
     def is_prime(self, num_int):
         """
         La funcion se basa en dividir el numero ingresado por cada uno
