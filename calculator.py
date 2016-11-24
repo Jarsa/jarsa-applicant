@@ -7,10 +7,15 @@ class CalculatorClass(object):
     """
     Your class documentation here
     """
-
     def sum(self, num_list):
         """
-        Your method documentation here
+        Hace un recorrido con el for y en cada iteracion suma el valor
+        de esa posicion o iteracion a la variable result.
+
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+
+        result = 0
+        for num in num_list:
+            result += num
+
+        return result
