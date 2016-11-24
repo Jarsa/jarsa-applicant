@@ -3,9 +3,9 @@ Your module documentation here
 
 """
 import math
+
+
 class PrimeClass(object):
-
-
     """
     Your class documentation here
     """
