@@ -9,7 +9,6 @@ class CalculatorClass(object):
     """
     Your class documentation here
     """
-
     def sum(self, num_list):
         """
         Hace un recorrido con el for y en cada iteracion suma el valor
