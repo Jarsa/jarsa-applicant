@@ -5,12 +5,15 @@ Your module documentation here
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Class containing methods for performing mathematical operations
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Sum the items in a variable
+        to obtain a result
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        sumatoria = 0
+        for index in num_list:
+            sumatoria = sumatoria + index
+        return sumatoria
