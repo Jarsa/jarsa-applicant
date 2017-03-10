@@ -29,7 +29,9 @@ INSERT INTO employee(fisrt_name,last_name, departmentID) VALUES
 ('Brenda Laura', 'Martell Medina', 3),
 ('Cesar', 'Sanchez Tapia', 2),
 ('Efren Eduardo', 'Lopez Ramos', 5);
+
 Select * from employee_department;
+
 SELECT * FROM employee;
 
 CREATE TABLE hobby(
@@ -49,6 +51,7 @@ INSERT INTO hobby(name, description) VALUES
 ('Board Game', 'Play board-games'),
 ('Read', 'Reading books, magazines and articles of any kind'),
 ('Programming', 'Develop web and mobile applications');
+
 SELECT * FROM hobby;
 
 INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(1,1);
@@ -59,6 +62,7 @@ INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(1,2);
 INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(2,2);
 INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(3,2);
 INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(4,1);
+
 SELECT * FROM employee_hobby;
 
 CREATE TABLE boss(

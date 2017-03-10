@@ -5,7 +5,7 @@ Your module documentation here
 
 class PrimeClass(object):
     """
-    Esta clase contiene un metodo o funcion 
+    Esta clase contiene un metodo o funcion
     que verifica si un numero es primo o no
     """
 
@@ -13,17 +13,17 @@ class PrimeClass(object):
         """
         El metodo hace recibe un paramro, el cual
         debe de ser un numero.
-        Al entrar en el metodo, el valor recibido 
+        Al entrar en el metodo, el valor recibido
         se convierte en entero.
-        El numero 1 no e sun numero primo, por lo que si 
-        el numero recibido es igual a uno, 
+        El numero 1 no e sun numero primo, por lo que si
+        el numero recibido es igual a uno,
         se retorna false.
         Si el numero es mayor de uno, se realiza un ciclo
-        for donde se verifica en cada iteraccion, 
+        for donde se verifica en cada iteraccion,
         que el numero recibido dividido por el index de interacion
         tenga un reciduo de 0, si lo tiene se va sumando
         uno a un contador, si el contador llega a 3
-        el ciclo se rompe. 
+        el ciclo se rompe.
         Si la variable Prime, es false al principio
         y en el for no se tiene ninguna interacion
         donde el residuo sea 0, el numero es primo
@@ -38,8 +38,8 @@ class PrimeClass(object):
             return False
         else:
             isprime = False
-            for i in range(1, int_num + 1):
-                if (int_num%i) == 0:
+            for index in range(1, int_num + 1):
+                if (int_num%index) == 0:
                     count = count + 1
                     if count >= 3:
                         isprime = True
