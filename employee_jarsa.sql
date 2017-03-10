@@ -19,7 +19,33 @@ CREATE TABLE employee (
   );
 
 CREATE TABLE employee_hobby (
+   id serial not null,
+   employee_id int not null,
+   hobby_id int not null,
+   primary key(id)
 );
+
+CREATE TABLE hobby (
+   id serial not null,
+   name varchar(60),
+   description varchar(200) 
+);
+
+alter table employee_hobby add constraint fk_employee_id foreign key(employee_id) references employee(id) on delete cascade on update cascade;
+alter table employee_hobby add constraint fk_hobby_id foreign key(hobby_id) references hobby(id) on delete cascade on update cascade;
+
+insert into hobby (name,description) values ('Dance','Dance many rithms');
+insert into hobby (name,description) values ('Collector','Collector of different things');
+insert into hobby (name,description) values ('Run','Running in many places');
+
+insert into employee_hobby(employee_id, hobby_id) values (1,1);
+insert into employee_hobby(employee_id, hobby_id) values (1,2);
+insert into employee_hobby(employee_id, hobby_id) values (2,2);
+insert into employee_hobby(employee_id, hobby_id) values (2,3);
+insert into employee_hobby(employee_id, hobby_id) values (3,1);
+insert into employee_hobby(employee_id, hobby_id) values (3,2);
+insert into employee_hobby(employee_id, hobby_id) values (4,2);
+insert into employee_hobby(employee_id, hobby_id) values (4,3); 
 
 -- ...
 alter table employee add constraint fk_employee_department_id foreign key(employee_department_id) references employee_department(id) 
