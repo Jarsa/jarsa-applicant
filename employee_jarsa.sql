@@ -12,7 +12,7 @@ CREATE TABLE employee_department (
 
 CREATE TABLE employee (
 	id SERIAL PRIMARY KEY,
-	fisrt_name VARCHAR(30),
+	first_name VARCHAR(30),
 	last_name VARCHAR(30),
 	departmentID INT REFERENCES employee_department(id)
 );
@@ -24,7 +24,7 @@ INSERT INTO employee_department(name,description) VALUES
 ('Development', 'Development and maINTenance of platforms and applications'), ('Finance', 'Managers of the companys capital'),
 ('MaINTenance', 'General company maINTenance');
 
-INSERT INTO employee(fisrt_name,last_name, departmentID) VALUES
+INSERT INTO employee(first_name,last_name, departmentID) VALUES
 ('Cristian', 'Vallejo Limon', 3),
 ('Brenda Laura', 'Martell Medina', 3),
 ('Cesar', 'Sanchez Tapia', 2),
@@ -40,30 +40,30 @@ CREATE TABLE hobby(
 	description VARCHAR(150)
 );
 
-CREATE TABLE employee_hobby (
+CREATE TABLE employee_has_hobby (
 	id SERIAL PRIMARY KEY,
 	employeeID INT REFERENCES employee(id),
 	hobbyID INT REFERENCES hobby(id),
 	UNIQUE(employeeID,hobbyID)
 );
 
-INSERT INTO hobby(name, description) VALUES 
+INSERT INTO employee_hobby(name, description) VALUES 
 ('Board Game', 'Play board-games'),
 ('Read', 'Reading books, magazines and articles of any kind'),
 ('Programming', 'Develop web and mobile applications');
 
-SELECT * FROM hobby;
-
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(1,1);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(2,3);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(3,1);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(4,3);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(1,2);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(2,2);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(3,2);
-INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(4,1);
-
 SELECT * FROM employee_hobby;
+
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(1,1);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(2,3);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(3,1);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(4,3);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(1,2);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(2,2);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(3,2);
+INSERT INTO employee_has_hobby(employeeID,hobbyID) VALUES(4,1);
+
+SELECT * FROM employee_has_hobby;
 
 CREATE TABLE boss(
 	id SERIAL PRIMARY KEY,
