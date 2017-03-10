@@ -32,7 +32,33 @@ INSERT INTO employee(fisrt_name,last_name, departmentID) VALUES
 Select * from employee_department;
 SELECT * FROM employee;
 
-CREATE TABLE employee_hobby (
+CREATE TABLE hobby(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(30),
+	description VARCHAR(150)
 );
+
+CREATE TABLE employee_hobby (
+	id SERIAL PRIMARY KEY,
+	employeeID INT REFERENCES employee(id),
+	hobbyID INT REFERENCES hobby(id),
+	UNIQUE(employeeID,hobbyID)
+);
+
+INSERT INTO hobby(name, description) VALUES 
+('Board Game', 'Play board-games'),
+('Read', 'Reading books, magazines and articles of any kind'),
+('Programming', 'Develop web and mobile applications');
+SELECT * FROM hobby;
+
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(1,1);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(2,3);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(3,1);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(4,3);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(1,2);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(2,2);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(3,2);
+INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(4,1);
+SELECT * FROM employee_hobby;
 
 -- ...
