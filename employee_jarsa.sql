@@ -61,4 +61,25 @@ INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(3,2);
 INSERT INTO employee_hobby(employeeID,hobbyID) VALUES(4,1);
 SELECT * FROM employee_hobby;
 
+CREATE TABLE boss(
+	id SERIAL PRIMARY KEY,
+    employeeID INT REFERENCES employee(id),
+    UNIQUE(employeeID)
+);
+
+INSERT INTO boss(employeeID) VALUES(1);
+INSERT INTO boss(employeeID) VALUES(2);
+
+CREATE TABLE employeeBoss(
+    id SERIAL PRIMARY KEY,
+    employeeID INT REFERENCES employee(id),
+    bossID INT REFERENCES boss(id),
+    UNIQUE(employeeID)
+);
+
+INSERT INTO employeeBoss(employeeID,bossID) VALUES(1,2);
+INSERT INTO employeeBoss(employeeID,bossID) VALUES(2,1);
+INSERT INTO employeeBoss(employeeID,bossID) VALUES(3,1);
+INSERT INTO employeeBoss(employeeID,bossID) VALUES(4,1);
+
 -- ...
