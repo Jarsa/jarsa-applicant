@@ -14,7 +14,7 @@ CREATE TABLE employee (
 	id SERIAL PRIMARY KEY,
 	fisrt_name VARCHAR(30),
 	last_name VARCHAR(30),
-	departmentID INT REFERENCES employee_department(departmentID)
+	departmentID INT REFERENCES employee_department(id)
 );
 
 INSERT INTO employee_department(name,description) VALUES 
