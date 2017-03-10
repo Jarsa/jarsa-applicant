@@ -31,10 +31,9 @@ class PrimeClass(object):
         y el contador llega unicamente a 2.
         En caso contario, el numero no es primo
         """
-        
         int_num = int(num_int)
         count = 0
-        if num_int == 1:
+        if num_int > 1:
             return False
         else:
             isprime = False
