@@ -38,8 +38,8 @@ class PrimeClass(object):
             return False
         else:
             isprime = False
-            for X in range(1, int_num + 1):
-                if (int_num%X) == 0:
+            for i in range(1, int_num + 1):
+                if (int_num%i) == 0:
                     count = count + 1
                     if count >= 3:
                         isprime = True
