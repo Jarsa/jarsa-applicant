@@ -33,8 +33,8 @@ class CalculatorClass(object):
         numbers = num_list
         numbers = numbers.split(',')
         sumatoria = 0
-        for i in range(0, numbers.lenght - 1):
-            sumatoria = sumatoria + int(numbers[i])
+        for i in numbers:
+            sumatoria = sumatoria + int(i)
         return sumatoria
 
 print "Ingresa una lista de numero separa por coma ej: 1,2,2,3"
