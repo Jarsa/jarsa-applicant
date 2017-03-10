@@ -28,8 +28,9 @@ class PrimeClass(object):
         """
         int_num = int(num_int)
         count = 0
-        if num_int > 1:
-            return False
+        retorno = False
+        if num_int == 1:
+            retorno = False
         else:
             isprime = False
             for index in range(1, int_num + 1):
@@ -39,6 +40,7 @@ class PrimeClass(object):
                         isprime = True
                         break
             if not isprime or count == 2:
-                return True
+                retorno = True
             else:
-                return False
+                retorno = False
+        return retorno
