@@ -32,19 +32,19 @@ class PrimeClass(object):
         En caso contario, el numero no es primo
         """
         
-        Int_Num = int(num_int)
-        Count = 0
+        int_num = int(num_int)
+        count = 0
         if num_int == 1:
             return False
         else:
-            isPrime = False
-            for x in range(1, Int_Num + 1):
-                if (Int_Num % x) == 0:
-                    Count = Count + 1
-                    if Count >= 3:
-                        isPrime = True
+            isprime = False
+            for x in range(1, int_num + 1):
+                if (Int_Num%x) == 0:
+                    count = count + 1
+                    if count >= 3:
+                        isprime = True
                         break
-            if not isPrime or Count == 2:
+            if not isprime or count == 2:
                 return True
             else:
                 return False
