@@ -1,8 +1,3 @@
-"""
-Your module documentation here
-"""
-
-
 class PrimeClass(object):
     """
     Esta clase contiene un metodo o funcion

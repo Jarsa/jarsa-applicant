@@ -17,3 +17,4 @@ class CalculatorClass(object):
         for index in num_list:
             sumatoria = sumatoria + index
         return sumatoria
+    
