@@ -30,9 +30,15 @@ class CalculatorClass(object):
         y al final se 
         rrtona el valor de la sumatoria
         """
-        Numbers = Number_List
-        Numbers = Numbers.split(',')
+        numbers = num_list
+        numbers = numbers.split(',')
         sumatoria = 0
-        for i in range(0, Numbers.lenght - 1):
-            sumatoria = sumatoria + float(Numbers(i))
+        for i in range(0, numbers.lenght - 1):
+            sumatoria = sumatoria + int(numbers[i])
         return sumatoria
+
+print "Ingresa una lista de numero separa por coma ej: 1,2,2,3"
+string = input()
+calculator = CalculatorClass()
+value = calculator.sum(string)
+print "El resultado de la sumatoria es :" + value
