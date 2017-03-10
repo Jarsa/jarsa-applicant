@@ -34,7 +34,7 @@ Select * from employee_department;
 
 SELECT * FROM employee;
 
-CREATE TABLE hobby(
+CREATE TABLE employee_hobby(
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(30),
 	description VARCHAR(150)
@@ -43,7 +43,7 @@ CREATE TABLE hobby(
 CREATE TABLE employee_has_hobby (
 	id SERIAL PRIMARY KEY,
 	employeeID INT REFERENCES employee(id),
-	hobbyID INT REFERENCES hobby(id),
+	hobbyID INT REFERENCES employee_hobby(id),
 	UNIQUE(employeeID,hobbyID)
 );
 
