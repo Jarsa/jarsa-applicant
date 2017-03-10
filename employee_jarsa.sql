@@ -64,3 +64,5 @@ alter table employee add constraint fk_employee_department_id foreign key(employ
  insert into employee (first_name, last_name, employee_department_id) values ('Victor','Vucio',1);
  insert into employee (first_name, last_name, employee_department_id) values ('Luis','Batres',2);
  insert into employee (first_name, last_name, employee_department_id) values ('Luis','Hernandez',4);
+--- ...
+ alter table employee add constraint fk_boss_id foreign key(id) references employee(id) on delete cascade on update cascade;
