@@ -10,7 +10,8 @@ class CalculatorClass(object):
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        It is more easy use the "sum" method to make
+        a foreach to sum one by one
         """
         # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        return sum(num_list)

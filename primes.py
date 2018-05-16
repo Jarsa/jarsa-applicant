@@ -17,7 +17,7 @@ class PrimeClass(object):
             return True
         if num_int % 2 == 0 or num_int < 2:
             return False
-        for i in range(3, int(num_int**0.5)+1, 2):
-            if num_int % i == 0:
+        for x_value in range(3, int(num_int**0.5)+1, 2):
+            if num_int % x_value == 0:
                 return False
         return True
