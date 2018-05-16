@@ -13,4 +13,11 @@ class PrimeClass(object):
         Your method documentation here
         """
         # your primes code here
-        return "not implement yet"  # Remove this dummy line
+        if num_int == 2 or num_int == 3:
+            return True
+        if num_int % 2 == 0 or num_int < 2:
+            return False
+        for i in range(3, int(num_int**0.5)+1, 2):
+            if num_int % i == 0:
+                return False
+        return True
