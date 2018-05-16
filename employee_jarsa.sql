@@ -43,6 +43,28 @@ INSERT INTO employee_department_rel(id_employee,id_department) VALUES(1,5);
 INSERT INTO employee_department_rel(id_employee,id_department) VALUES(1,6);
 
 CREATE TABLE employee_hobby (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(200),
+    description VARCHAR(350)
 );
+
+INSERT INTO employee_hobby(name, description) VALUES("VideoGames","Play videogames with the friends");
+INSERT INTO employee_hobby(name, description) VALUES("See TV","See the TV");
+INSERT INTO employee_hobby(name, description) VALUES("Football","Play FootBall with other colegues");
+
+CREATE TABLE employee_hobby_rel (
+    id SERIAL PRIMARY KEY,
+    id_employee SERIAL NOT NULL,
+    id_hobby SERIAL NOT NULL
+);
+
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(1,1);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(1,3);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(2,2);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(2,3);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(3,1);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(3,2);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(4,1);
+INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(5,3);
 
 -- ...
