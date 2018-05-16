@@ -7,7 +7,7 @@ CREATE TABLE employee (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(200),
     last_name VARCHAR(200),
-    boss_employee INT NULL
+    boss_employee SERIAL NULL
 );
 
 CREATE TABLE employee_department (
@@ -67,4 +67,8 @@ INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(3,2);
 INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(4,1);
 INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(5,3);
 
+INSERT INTO employee(boss_employee) VALUES(0) WHERE employee.id = 1;
+INSERT INTO employee(boss_employee) VALUES(1) WHERE employee.id = 2;
+INSERT INTO employee(boss_employee) VALUES(1) WHERE employee.id = 3;
+INSERT INTO employee(boss_employee) VALUES(1) WHERE employee.id = 4;
 -- ...
