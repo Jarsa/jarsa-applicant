@@ -7,7 +7,6 @@ CREATE TABLE employee (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(200),
     last_name VARCHAR(200),
-    boss_employee SERIAL NULL
 );
 
 CREATE TABLE employee_department (
@@ -67,8 +66,10 @@ INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(3,2);
 INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(4,1);
 INSERT INTO employee_hobby_rel(id_employee,id_hobby) VALUES(5,3);
 
-INSERT INTO employee(boss_employee) VALUES(0) WHERE employee.id = 1;
-INSERT INTO employee(boss_employee) VALUES(1) WHERE employee.id = 2;
-INSERT INTO employee(boss_employee) VALUES(1) WHERE employee.id = 3;
-INSERT INTO employee(boss_employee) VALUES(1) WHERE employee.id = 4;
+ALTER TABLE employee ADD boss_id INT REFERENCES employee(id);
+
+UPDATE employee SET boss_id = 11 WHERE id = 1;
+UPDATE employee SET boss_id = 33 WHERE id = 2;
+UPDATE employee SET boss_id = 22 WHERE id = 3;
+UPDATE employee SET boss_id = 33 WHERE id = 4; 
 -- ...
