@@ -1,16 +1,24 @@
 """
-Your module documentation here
+Modulo de ejercicio para examen
 """
 
 
 class PrimeClass(object):
     """
-    Your class documentation here
+    Esta clase es creada para verificar numeros primos
     """
 
     def is_prime(self, num_int):
         """
-        Your method documentation here
+        Este metodo devuelve un True en caso de que el numero
+        proporcionado sea primo
         """
-        # your primes code here
-        return "not implement yet"  # Remove this dummy line
+        if num < 1:
+            return False
+        elif num == 2:
+            return True
+        else:
+            for i in range(2, num_int):
+                if num % i == 0:
+                    return False
+            return True   
