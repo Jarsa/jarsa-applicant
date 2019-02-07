@@ -1,16 +1,18 @@
 """
-Your module documentation here
+Modulo de prueba para examen
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Clase para suma de numeros dentro de una lista
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Metodo para sumar numeros de una lista dada
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        total = 0
+        for i in num_list:
+            total = total + i
+        return total
