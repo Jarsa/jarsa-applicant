@@ -30,3 +30,30 @@ insert into employee(id,first_name,last_name,id_department) values (0,'Jose','Ju
 insert into employee(id,first_name,last_name,id_department) values (0,'Pedro','Perez',2);
 insert into employee(id,first_name,last_name,id_department) values (0,'Maria','Saldaña',1);
 insert into employee(id,first_name,last_name,id_department) values (0,'Israel','Cuevas',3);
+
+create table employee_hobby(
+id int auto_increment,
+namee varchar(20),
+description text,
+primary key (id)
+);
+
+create table employeexhobby(
+id int auto_increment,
+id_employee int,
+id_hobby int,
+primary key (id)
+);
+
+insert into employee_hobby(id,namee,description) values (0,'Tocar instrumentos','Tocar algun instrumento musical');
+insert into employee_hobby(id,namee,description) values (0,'Cantar','Musica ranchera');
+insert into employee_hobby(id,namee,description) values (0,'Hacer deporte','Practicar box,calistenia,crossfit,etc.');
+
+insert into employeexhobby(id,id_employee,id_hobby) values(0,1,1);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,1,3);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,2,1);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,2,2);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,3,3);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,3,2);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,4,2);
+insert into employeexhobby(id,id_employee,id_hobby) values(0,4,1);
