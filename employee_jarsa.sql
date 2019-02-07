@@ -57,3 +57,10 @@ insert into employeexhobby(id,id_employee,id_hobby) values(0,3,3);
 insert into employeexhobby(id,id_employee,id_hobby) values(0,3,2);
 insert into employeexhobby(id,id_employee,id_hobby) values(0,4,2);
 insert into employeexhobby(id,id_employee,id_hobby) values(0,4,1);
+
+alter table employee add column id_boss int;
+
+update employee set id_boss = 2 where id = 1;
+update employee set id_boss = 4 where id = 2;
+update employee set id_boss = 2 where id = 3;
+update employee set id_boss = 1 where id = 4;
