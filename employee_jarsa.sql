@@ -27,3 +27,30 @@ INSERT INTO employee VALUES (1,'Hugo','Manuel',1);
 INSERT INTO employee VALUES (2,'Mario','Delgado',2);
 INSERT INTO employee VALUES (3,'Emanuel','Jimenez',4);
 INSERT INTO employee VALUES (4,'Victor','Trujillo',1);
+
+CREATE TABLE employee_hobby (
+	id Integer primary key not null, 
+	name varchar(50), 
+	description varchar(50)
+);
+
+INSERT INTO employee_hobby VALUES(1,'Atletismo','Atletismo');
+INSERT INTO employee_hobby VALUES(2,'Ajedrez','Ajedrez');
+INSERT INTO employee_hobby VALUES(3,'Dibujar','Dibujar');
+
+--Relation Many2many with hobby employees
+create table employee_hobby_rel(
+     employee_id Integer not null,
+     employee_hobby_id Integer not null
+)
+
+
+INSERT INTO employee_hobby_rel VALUES (1,1);
+INSERT INTO employee_hobby_rel VALUES (1,3);
+INSERT INTO employee_hobby_rel VALUES (2,1);
+INSERT INTO employee_hobby_rel VALUES (2,2);
+INSERT INTO employee_hobby_rel VALUES (3,2);
+INSERT INTO employee_hobby_rel VALUES (3,1);
+INSERT INTO employee_hobby_rel VALUES (4,3);
+INSERT INTO employee_hobby_rel VALUES (4,1);
+-- ...
