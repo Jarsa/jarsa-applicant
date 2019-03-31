@@ -3,29 +3,24 @@
 --       You can create database locally to test it.
 --       Consider add ';' at end sentence.
 
-CREATE TABLE employee_department (
-id serial PRIMARY KEY, name VARCHAR (50), 
-description VARCHAR(50)
-);
-
-CREATE TABLE employee (
-id serial PRIMARY KEY, first_name VARCHAR (50),
-last_name VARCHAR (50), dep_id serial,
-FOREIGN KEY (dep_id) REFERENCES employee_department
-(id)
-);
-
-INSERT INTO employee_department (name, description) 
-VALUES ('accounting', 'takes care of all company accounts'),
-('hr','human resources'),('manufacturing','builds the product'),
-('sales','sells the product'),('management','manages activities'),
-('programers','build the software');
-
-INSERT INTO employee (first_name, last_name, dep_id) 
-VALUES ('John', 'Doe', '2'),
-('Jane','Doe', '2'),('Fulano','Mangado', '1'),
-('Fulana','Mangada', '5');
+CREATE TABLE employee_hobby(id serial PRIMARY KEY, name VARCHAR (50), 
+description VARCHAR (50));
 
 
+INSERT INTO employee_hobby (name, description) VALUES 
+('basketball','shoot balls into a basket'),
+('chess','really old game'),
+('woodworking','building furniture');
+
+CREATE TABLE employee_hobbies(employee_id int 
+REFERENCES employee (id) ON UPDATE CASCADE ON 
+DELETE CASCADE, hobby_id int REFERENCES 
+employee_hobby (id) ON UPDATE CASCADE, 
+CONSTRAINT employee_hobby_id_pkey PRIMARY KEY 
+(employee_id, hobby_id));
+
+INSERT INTO employee_hobbies (employee_id, hobby_id) 
+VALUES ('1','1'),('1','2'),('2','2'),('2','3'),('3','2'),
+('3','3'),('4','1'),('4','3');
 
 -- ...
