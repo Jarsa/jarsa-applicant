@@ -32,4 +32,38 @@ VALUES ('John','Doe','2'),
 ('Jane', 'Doe', '3'),
 ('Fulano', 'Mangano','2'),
 ('Fulana', 'Mangana', '1');
+
+CREATE TABLE employee_hobby(
+id serial PRIMARY KEY, 
+name varchar(50) NOT NULL, 
+description text
+);
+
+CREATE TABLE employee_hobbies(
+employeeid int,
+id int
+);
+
+ALTER TABLE employee_hobbies
+ADD FOREIGN KEY (employeeid) REFERENCES employee(id);
+
+ALTER TABLE employee_hobbies
+ADD FOREIGN KEY (id) REFERENCES employee_hobby(id);
+
+INSERT INTO employee_hobby (name, description)
+VALUES ('Woodworking','Building furniture mantel pieces etc...'),
+('Bowling', 'Rolling a ball to knock down pins'),
+('Basketball','Shooting a ball into a hoop');
+
+INSERT INTO employee_hobbies (employeeid, id)
+VALUES ('1','3'),
+('1', '2'),
+('2','2'),
+('2','1'),
+('3','1'),
+('3','3'),
+('4','2'),
+('4','1');
+
+
 -- ...
