@@ -2,6 +2,8 @@
 -- NOTE: Please, don't add sentence to create database in this script file.
 --       You can create database locally to test it.
 --       Consider add ';' at end sentence.
+
+
 CREATE TABLE employee(
 id serial PRIMARY KEY,
 first_name varchar(50) NOT NULL, 
@@ -66,4 +68,10 @@ VALUES ('1','3'),
 ('4','1');
 
 
+ALTER TABLE employee ADD COLUMN bossid INT DEFAULT NULL;
+
+UPDATE employee SET bossid = 1 WHERE id = 1;
+UPDATE employee SET bossid = 1 WHERE id = 2;
+UPDATE employee SET bossid = 1 WHERE id = 3;
+UPDATE employee SET bossid = 1 WHERE id = 4;
 -- ...
