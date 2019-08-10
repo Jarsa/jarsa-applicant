@@ -36,3 +36,34 @@ INSERT INTO employee values
 (2, 'Smith', 'Xamas Souns', 3),
 (3, 'John', 'Martinez Loto', 5),
 (4, 'Ana Martha', 'Lucas Luna', 3);
+
+CREATE TABLE employee_hobby (
+    id int,
+    name varchar(30),
+    description varchar(50)
+);
+
+ALTER TABLE employee_hobby ADD PRIMARY KEY(id);
+
+CREATE TABLE employees_hobbies ();
+
+ALTER TABLE employees_hobbies ADD COLUMN id_employee int;
+ALTER TABLE employees_hobbies ADD COLUMN id_hobby int;
+
+ALTER TABLE employees_hobbies ADD FOREIGN KEY(id_employee) REFERENCES employee(id);
+ALTER TABLE employees_hobbies ADD FOREIGN KEY(id_hobby) REFERENCES employee_hobby(id);
+
+INSERT INTO employee_hobby values
+(1, 'Reading books', 'X'),
+(2, 'Dancing', 'X'),
+(3, 'Listening to music', 'X');
+
+INSERT INTO employees_hobbies values
+(1, 2),
+(1, 3),
+(2, 2),
+(2, 3),
+(3, 2),
+(3, 3),
+(4, 2),
+(4, 3);
