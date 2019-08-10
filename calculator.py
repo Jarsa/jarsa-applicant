@@ -1,16 +1,18 @@
 """
-Your module documentation here
+Here is the class with its method or function to evaluation.
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Inside is the function to sum if a number a list of numbers.
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        This receives a list of number and with for sum every element.
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        x = 0
+        for i in num_list:
+            x = x + i
+        return x
