@@ -67,3 +67,9 @@ INSERT INTO employees_hobbies values
 (3, 3),
 (4, 2),
 (4, 3);
+
+ALTER TABLE employee ADD COLUMN id_boss int;
+ALTER TABLE employee ADD FOREIGN KEY(id_boss) REFERENCES employee(id);
+
+UPDATE employee
+SET id_boss = 1;
