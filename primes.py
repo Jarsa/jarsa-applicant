@@ -1,16 +1,16 @@
-"""
-Your module documentation here
-"""
-
-
 class PrimeClass(object):
-    """
-    Your class documentation here
-    """
-
-    def is_prime(self, num_int):
-        """
-        Your method documentation here
-        """
-        # your primes code here
-        return "not implement yet"  # Remove this dummy line
+    num_int=int(input("Enter a number:"))
+    
+    if num_int <= 1:
+        print (num_int,"is not prime")
+    else:
+        a=2
+        check = True
+    while a != num_int:
+        if num_int%a == 0:
+            print (num_int, "is not prime")
+            check = False
+            break
+        a+=1
+    if check == True:
+        print (num_int,"is prime")
