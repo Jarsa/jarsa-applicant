@@ -3,13 +3,19 @@
 --       You can create database locally to test it.
 --       Consider add ';' at end sentence.
 
+
+--ALTERNATIVELY: ADD BOSS TABLE AND MOVE LOGIC FROM EMPLOYEE TABLE TO BOSS, USE INTEGER CONSTRAINTS ON BOSS ID ETC.
+
 CREATE TABLE employee (
     id serial PRIMARY KEY,
     first_name VARCHAR(40) NOT NULL,
     last_name VARCHAR(40) NOT NULL,
     employee_department_id INTEGER REFERENCES employee_department (id)
     --employee_hobby_id INTEGER REFERENCES employee_hobby (id) in case we want single hobby constraint
-    employee_hobbies_id INTEGER [] --primary key constraint not supported for integers afaik
+    employee_hobbies_id INTEGER [], --primary key constraint not supported for integers afaik
+    is_boss BOOLEAN NOT NULL,
+    employees INTEGER [], --ID OF EMPLOYEES UNDER BOSS
+    who_is_my_boss_id INTEGER
 );
 
 CREATE TABLE employee_department (
@@ -26,30 +32,42 @@ CREATE TABLE employee_hobby (
 
 -- ...
 
-INSERT INTO employee (first_name, last_name, employee_department_id, employee_hobbies_id )
+INSERT INTO employee (first_name, last_name, employee_department_id, employee_hobbies_id, is_boss, employees, who_is_my_boss_id )
 VALUES(
     'Mr meow',
     'whiskers',
     1,
-    '{1,2}'
+    '{1,2}',
+    TRUE,
+    '{2,3,4}',
+    1
 ),
 (
     'Terry',
     'Crews',
     2,
-    '{1,2,3}'
+    '{1,2,3}',
+    FALSE,
+    '{}',
+    1
 ),
 (
     'John',
     'Smith',
     2,
-    '{2,3}'
+    '{2,3}',
+    FALSE,
+    '{}',
+    1
 ),
 (
     'Oliver',
     'Khan',
     5,
-    '{1,2,3}'
+    '{1,2,3}',
+    FALSE,
+    '{}',
+    1
 );
 
 INSERT INTO employee_department(department_name, department_description)
