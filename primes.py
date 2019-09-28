@@ -1,5 +1,5 @@
 """
-Primes module for JARSA Testing Excercizes.
+Primes module for JARSA Testing exercises.
 """
 
 
@@ -16,9 +16,8 @@ class PrimeClass(object):
         isPrime = True
 
         if num_int > 1:
-            for x in range(2,num_int):
+            for x in range(2, num_int):
                 if(num_int % x == 0):
                     isPrime = False
                     break
-            
         return isPrime
