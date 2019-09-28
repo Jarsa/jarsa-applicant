@@ -1,16 +1,19 @@
 """
-Your module documentation here
+Python module for calculator functionality for JARSA Testing exercises.
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Calculator object that implements basic arithmetic.
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Method to return the sum of a list of numbers
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        sum = 0
+        for x in num_list:
+            sum += x
+
+        return sum
