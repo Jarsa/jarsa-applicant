@@ -1,16 +1,22 @@
 """
-Your module documentation here
+This is my prime Class
 """
 
 
-class PrimeClass(object):
+class PrimeClass():
     """
-    Your class documentation here
+    Prime Class used to see if a number is prime
     """
 
     def is_prime(self, num_int):
         """
-        Your method documentation here
+        Method that uses prime Class
         """
         # your primes code here
-        return "not implement yet"  # Remove this dummy line
+        if num_int == 2 or num_int == 3:
+            return True
+        even = num_int % 2
+        odd = num_int % 3
+        if even == 0 or odd == 0:
+            return False
+        return True
