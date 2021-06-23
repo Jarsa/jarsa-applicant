@@ -25,7 +25,7 @@ INSERT INTO employee_department(name, description) VALUES ('General Managment','
 ('Finance','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto non quasi'),
 ('Sales','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto non quasi'),
 ('Purchase','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto non quasi');
-
+													
 INSERT INTO employee(first_name, last_name, department) VALUES ('Jaziel Abisai','Rodriguez Hernandez', 1),
 ('Joshua Isaí','Salas Saavedra',2),
 ('Ana Lizeth','Ramirez Rivas',4),
@@ -63,3 +63,15 @@ INSERT INTO employee_hobby_detail(id_employee, id_hobby) VALUES (1,1),
 (4,1),
 (4,2),
 (4,3);
+
+ALTER TABLE employee ADD COLUMN boss int null;
+ALTER TABLE employee ADD FOREIGN KEY (boss) REFERENCES employee(id);
+
+
+INSERT INTO employee(first_name, last_name, department,boss) VALUES('David Alberto','De Lara Garcia',3,1),
+('Marco Antonio','Carrillo Esparza',5,3),
+('Patricia Lizbeth','Godoy Castañeda',6,5);
+
+Update employee set boss=1 where id=2;
+Update employee set boss=1 where id=3;
+Update employee set boss=2 where id=4;
