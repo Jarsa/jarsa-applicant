@@ -1,16 +1,15 @@
-"""
-Your module documentation here
-"""
+#!/usr/bin/python
+# -- coding: utf-8 --
 
 
-class CalculatorClass(object):
-    """
-    Your class documentation here
-    """
-
-    def sum(self, num_list):
-        """
-        Your method documentation here
-        """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+class calculator_class:
+    def sumalista(listaNumeros):
+        laSuma = 0
+        for i in listaNumeros:
+            laSuma = laSuma + i
+        return laSuma
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    c = int(input("Enter third number: "))
+    d = int(input("Enter four number: "))
+    print(sumalista([a,b,c,d]))

@@ -11,5 +11,26 @@ CREATE TABLE employee_department (
 
 CREATE TABLE employee_hobby (
 );
+ADD COLUMN first_name "char";
+
+ADD COLUMN id bigint NOT NULL;
+
+ADD COLUMN last_name "char";
+
+INSERT INTO employee(first_name, last_name)
+VALUES
+(jorge, pinto);(rogelio,pedroza );
+(pedro,gonzales );
+(isac,rodriguez);
+
+INSERT INTO employee_department(name, description)
+VALUES
+   (belleza, algo de belleza);
+   (salud, salud y bienestar);
+   (limpieza, escobeas y trapeadores);
+   (gaming, videojuegos);
+   (electrodomesticos, estufas y lavadoras);
+   (electronica, laptops);
+   (telefonia, smartphones);
 
 -- ...
